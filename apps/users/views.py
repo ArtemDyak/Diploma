@@ -8,6 +8,13 @@ class UserLoginView(LoginView):
 
 
 class UserRegisterView(FormView):
-    template_name = "user/register.html"
+    template_name = "users/register.html"
     form_class = UserRegisterForm
 
+    def get_context_data(self, **kwargs):
+        context = super(
+            UserRegisterView, self
+        ).get_context_data(**kwargs)
+
+        context['bgimage'] = 'img/пляж.jpg'
+        return context
