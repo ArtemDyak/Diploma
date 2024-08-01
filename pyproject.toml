@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "diploma"
+version = "0.1.0"
+description = "Учебный проект на django"
+authors = ["dyak <artemdyakonov17@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

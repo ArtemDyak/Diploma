@@ -4,8 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" >
 </head>
-<body style="background-image: url({% static bgimage%});">
-    {{ form }}
+<body style="background-image: url({% static bgimage%}); background-size: cover;">
+
+    <div class="form-wrapper">
+         <form method="post">
+             {% csrf_token %}
+             {{ form }}
+             <input type="submit">
+         </form>
+    </div>
+
+
 </body>
 </html>

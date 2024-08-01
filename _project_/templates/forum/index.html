@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" >
 </head>
-<body style="background-image: url({% static bgimage%});">
+<body style="background-image: url({% static bgimage%}); background-size: cover;">
 
 
     {% if user %}
@@ -15,5 +17,7 @@
             <a href="{% url 'register' %}">Регистрация</a>
         </div>
     {% endif %}
+
+
 </body>
 </html>
