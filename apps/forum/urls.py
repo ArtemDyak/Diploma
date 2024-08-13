@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('index/', views.ForumTitleView.as_view(), name='title_forum')
+    path('title/', views.ForumTitleView.as_view(), name='title_forum'),
+    path('new/', views.MessageCreateView.as_view(), name='new_forum'),
 ]

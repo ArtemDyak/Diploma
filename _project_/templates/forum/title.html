@@ -8,6 +8,11 @@
 </head>
 <body style="background-image: url({% static bgimage%}); background-size: cover;">
 
+ {% for message in messages %}
+        <div>
+            {{ message.content }}
+        </div>
+    {% endfor %}
 
 
 </body>

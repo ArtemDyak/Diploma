@@ -1,5 +1,7 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
 from django.urls import reverse_lazy
+from . models import Message
+from .forms import NewMessageForm
 
 
 class ForumTitleView(TemplateView):
@@ -10,7 +12,16 @@ class ForumTitleView(TemplateView):
             ForumTitleView, self
         ).get_context_data(**kwargs)
 
-        context['bgimage'] = 'img/фон.jpg'
+        context["messages"] = Message.objects.all()
+        context['bgimage'] = 'img/3 страница.jpg'
         return context
 
 
+class MessageCreateView(FormView):
+    template_name = "forum/new_message.html"
+    form_class = NewMessageForm
+    success_url = reverse_lazy('title_forum')
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
