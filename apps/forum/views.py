@@ -13,7 +13,7 @@ class ForumTitleView(TemplateView):
         ).get_context_data(**kwargs)
 
         context["messages"] = Message.objects.all()
-        context['bgimage'] = 'img/3 страница.jpg'
+        context['bgimage'] = 'img/ооо.jpg'
         return context
 
 
