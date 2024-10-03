@@ -16,7 +16,9 @@
                      {{ message.sender.username }}
                 </div>
                 <div class="image-wrapper" style="max-width:100px;">
+                    {% if message.attached_file %}
                     <img src="../../media/{{message.attached_file}}" style="width: 100%;">
+                    {% endif %}
                     {{ message.text }}
                 </div>
             </div>
