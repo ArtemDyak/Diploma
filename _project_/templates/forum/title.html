@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+{% extends '_base.html' %}
+
+{% block content %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-     <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" >
-</head>
 <body style="background-image: url({% static bgimage%}); background-size: cover;">
+    <div class="messages-wrapper" style="display: flex;
+                                         flex-direction: column;
+                                         flex-wrap: wrap;
+                                         align-content: flex-start;
+                                         align-items: flex-start;
+                                         max-height: 80vh;">
 
- {% for message in messages %}
-        <div>
-            {{ message.content }}
-        </div>
-    {% endfor %}
-
-
+        {% for message in messages %}
+            <div class="message-wrapper">
+                <div class="username">
+                     {{ message.sender.username }}
+                </div>
+                <div class="image-wrapper" style="max-width:100px;">
+                    <img src="../../media/{{message.attached_file}}" style="width: 100%;">
+                    {{ message.text }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </body>
-</html>
+{% endblock %}

@@ -14,7 +14,7 @@ class UserLoginView(LoginView):
             UserLoginView, self
         ).get_context_data(**kwargs)
 
-        context['bgimage'] = 'img/ааа.jpg'
+        context['bgimage'] = 'img/шшш.jpg'
         return context
 
 
@@ -32,5 +32,5 @@ class UserRegisterView(FormView):
             UserRegisterView, self
         ).get_context_data(**kwargs)
 
-        context['bgimage'] = 'img/ааа.jpg'
+        context['bgimage'] = 'img/шшш.jpg'
         return context

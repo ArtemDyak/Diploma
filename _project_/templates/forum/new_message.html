@@ -1,17 +1,12 @@
-<!DOCTYPE html>
+{% extends '_base.html' %}
+
+{% block content %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" >
-</head>
-<body style = "background-image: url({% static 'img/ллл.jpg'%}); background-size: cover;">
+<body style = "background-image: url({% static 'img/ззз.jpg'%}); background-size: cover;">
     <div class="form-wrapper">
-        <form method="post" action="">
+        <form method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
-
             <div class="container">
                 <input class="button" type="submit" value="Save">
             </div>
@@ -19,4 +14,4 @@
          </form>
     </div>
 </body>
-</html>
+{% endblock %}
